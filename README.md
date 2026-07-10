@@ -1,6 +1,5 @@
 # WordsTraining-by-Moonhorse
 To Train words and translation
-# unfinished
 ## wordEditing.py
 - class WordEditor(*files):
     - edit_word(old_word, new_word)
