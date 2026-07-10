@@ -1,8 +1,8 @@
-from packages import *
+from core import *
 import os
 from glob import glob
-files = glob("Words/*.json")
-import scripts
+files = glob("words/*.json")
+import utils
 
 word="word"
 translation="translation"
@@ -12,9 +12,9 @@ WE = wordEditing.WordEditor(*files)
 if __name__ == "__main__":
     mode = input("Enter mode (WE for Word Editor, WT for Word Trainer):")
     if mode == "WE":
-        scripts.WEmode.WEmode(WE)
+        utils.WEmode.WEmode(WE)
     elif mode == "WT":
         WT = wordTraining.WordTrainer(WE.content)
-        scripts.WTmode.WTmode(WT)
+        utils.WTmode.WTmode(WT)
     else:
         print("Invalid mode. Please enter 'WE' or 'WT'.")

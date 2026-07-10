@@ -11,8 +11,8 @@ class WordEditor():
             except FileNotFoundError:
                 print(f"File {file} not found.")
                 self.content = ""
-    def edit_word(self, old_word_id, new_word):
-        self.content[id] = new_word
+    def edit_word(self, old_word, new_word):
+        self.content[self.find_index(old_word)] = new_word
     def delete_word(self, id):
         del self.content[id]
     def add_word(self, word):
@@ -20,11 +20,11 @@ class WordEditor():
     def find_index(self, word):
         for i, w in enumerate(self.content):
             if w["word"] == word:
-                return i
+                return int(i)
         return -1
     def show_all_words(self):
         for word in self.content:
             print(f"Word: {word['word']}, Translation: {word['translation']}, Description: {word['description']}")
-    def save(self, file):
+    def save_file(self, file):
         with open(file, "w", encoding="utf-8") as f:
             json.dump(self.content, f, ensure_ascii=False, indent=4)
