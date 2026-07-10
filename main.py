@@ -1,7 +1,7 @@
 from core import *
 import os
 from glob import glob
-files = glob("words/*.json")
+files = glob("data/*.json")
 import utils
 
 word="word"
