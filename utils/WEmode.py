@@ -70,6 +70,13 @@ def WEmode(WE):
             input("Press Enter to continue...")
         elif choice == "6":
             print("Help: ")
+            print("1. Edit Word: Edit an existing word in the list.")
+            print("2. Delete Word: Delete a word from the list.")
+            print("3. Add Word: Add a new word to the list.")
+            print("4. Save File: Save the current list of words to a file.")
+            print("5. Show All Words: Display all words in the list.")
+            print("6. Help: Show this help message.")
+            print("7. Exit: Exit the Word Editor Mode.")
             input("Press Enter to continue...")
         elif choice == "7":
             break
