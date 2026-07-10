@@ -1,5 +1,8 @@
 import os
 
+from core import clear_screen
+
+
 def keepInput(msg):
     while True:
         user_input = input(msg)
@@ -8,9 +11,10 @@ def keepInput(msg):
         else:
             return user_input
 
+
 def WEmode(WE):
     while True:
-        os.system("clear")
+        clear_screen()
         print("Word Editor Mode")
         print("1. Edit Word")
         print("2. Delete Word")
@@ -34,7 +38,7 @@ def WEmode(WE):
             new_word = {
                 "word": new_word_word,
                 "translation": new_word_translation,
-                "description": new_word_description
+                "description": new_word_description,
             }
             WE.edit_word(old_word, new_word)
         elif choice == "2":
@@ -51,18 +55,22 @@ def WEmode(WE):
             new_word = {
                 "word": new_word_word,
                 "translation": new_word_translation,
-                "description": new_word_description
+                "description": new_word_description,
             }
             WE.add_word(new_word)
         elif choice == "4":
-            folder = keepInput('Enter the folder name to save the file (default: Words): ')
+            folder = keepInput(
+                "Enter the folder name to save the file (default: Words): "
+            )
             if not folder:
-                folder = 'Words'
+                folder = "Words"
             if not os.path.exists(folder):
                 os.makedirs(folder)
-            fileName=keepInput('Enter the file name to save the file (default: words.json): ')
+            fileName = keepInput(
+                "Enter the file name to save the file (default: words.json): "
+            )
             if not fileName:
-                fileName = 'words.json'
+                fileName = "words.json"
             filePath = os.path.join(folder, fileName)
             WE.save_file(filePath)
         elif choice == "5":

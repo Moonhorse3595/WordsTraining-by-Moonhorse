@@ -1,16 +1,19 @@
-from core import *
 import os
 from glob import glob
+
+from core import *
+
 files = glob("data/*.json")
 import utils
 
-word="word"
-translation="translation"
-description="description"
+word = "word"
+translation = "translation"
+description = "description"
 
 WE = wordEditing.WordEditor(*files)
 if __name__ == "__main__":
     while True:
+        clear_screen()
         mode = input("Enter mode (WE for Word Editor, WT for Word Trainer):")
         if mode == "WE":
             utils.WEmode.WEmode(WE)

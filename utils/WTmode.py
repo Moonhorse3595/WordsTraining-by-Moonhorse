@@ -1,55 +1,63 @@
 from random import randint
-import os
 
-word="word"
-translation="translation"
-description="description"
+from core import clear_screen
+
+word = "word"
+translation = "translation"
+description = "description"
+
 
 def spell_mode(WT, times=1):
     for i in range(times):
-        os.system("clear")
-        question=WT.spelling()
+        clear_screen()
+        question = WT.spelling()
         print("=" * 10)
         print(f"spell the word {question[translation]}")
         print("=" * 10)
-        answer=input("answer: ")
-        if answer==question[word]:
+        answer = input("answer: ")
+        if answer == question[word]:
             print("Correct!")
             input("Press Enter to continue...")
         else:
             print(f"Wrong! The correct answer is {question[word]}.")
             input("Press Enter to continue...")
+
+
 def multiple_choice_mode1(WT, times=1, choiceamount=4):
-    question=WT.multich(choiceamount)
-    ramdom_index=randint(0, choiceamount-1)
-    question_word=question[ramdom_index]
+    question = WT.multich(choiceamount)
+    ramdom_index = randint(0, choiceamount - 1)
+    question_word = question[ramdom_index]
     for i in range(times):
-        os.system("clear")
+        clear_screen()
         print("=" * 10)
         print(f"choose the correct translation for the word {question_word[word]}")
         for i in range(choiceamount):
-            print(f"{i+1}. {question[i][translation]}")
+            print(f"{i + 1}. {question[i][translation]}")
         print("=" * 10)
-        answer=int(input("answer: "))
-        if answer==ramdom_index+1:
+        answer = int(input("answer: "))
+        if answer == ramdom_index + 1:
             print("Correct!")
             input("Press Enter to continue...")
         else:
             print(f"Wrong! The correct answer is {question_word[translation]}.")
             input("Press Enter to continue...")
+
+
 def multiple_choice_mode2(WT, times=1, choiceamount=4):
-    question=WT.multich(choiceamount)
-    ramdom_index=randint(0, choiceamount-1)
-    question_word=question[ramdom_index]
-    os.system("clear")
+    question = WT.multich(choiceamount)
+    ramdom_index = randint(0, choiceamount - 1)
+    question_word = question[ramdom_index]
+    clear_screen()
     for i in range(times):
         print("=" * 10)
-        print(f"choose the correct word for the translation {question_word[translation]}")
+        print(
+            f"choose the correct word for the translation {question_word[translation]}"
+        )
         for i in range(choiceamount):
-            print(f"{i+1}. {question[i][word]}")
+            print(f"{i + 1}. {question[i][word]}")
         print("=" * 10)
-        answer=int(input("answer: "))
-        if answer==ramdom_index+1:
+        answer = int(input("answer: "))
+        if answer == ramdom_index + 1:
             print("Correct!")
             input("Press Enter to continue...")
         else:
@@ -59,13 +67,19 @@ def multiple_choice_mode2(WT, times=1, choiceamount=4):
 
 def WTmode(WT):
     while True:
-        os.system("clear")
-        mode = input("Enter the mode (spell or multiple choice1 or multiple choice2 or quit/exit or help): ")
+        clear_screen()
+        mode = input(
+            "Enter the mode (spell or multiple choice1 or multiple choice2 or quit/exit or help): "
+        )
         if mode == "spell":
-            times = input("Enter the number of times you want to spell (default is 1): ")
+            times = input(
+                "Enter the number of times you want to spell (default is 1): "
+            )
             spell_mode(WT, times=int(times))
         elif mode == "multiple choice1":
-            times = input("Enter the number of times you want to answer multiple choice questions (default is 1): ")
+            times = input(
+                "Enter the number of times you want to answer multiple choice questions (default is 1): "
+            )
             multiple_choice_mode1(WT, times=int(times))
         elif mode == "quit" or mode == "exit":
             break
