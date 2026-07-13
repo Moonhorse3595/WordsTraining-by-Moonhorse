@@ -24,10 +24,10 @@ def spell_mode(WT, times=1):
 
 
 def multiple_choice_mode1(WT, times=1, choiceamount=4):
-    question = WT.multich(choiceamount)
-    ramdom_index = randint(0, choiceamount - 1)
-    question_word = question[ramdom_index]
     for i in range(times):
+        question = WT.multich(choiceamount)
+        ramdom_index = randint(0, choiceamount - 1)
+        question_word = question[ramdom_index]
         clear_screen()
         print("=" * 10)
         print(f"choose the correct translation for the word {question_word[word]}")
@@ -44,11 +44,11 @@ def multiple_choice_mode1(WT, times=1, choiceamount=4):
 
 
 def multiple_choice_mode2(WT, times=1, choiceamount=4):
-    question = WT.multich(choiceamount)
-    ramdom_index = randint(0, choiceamount - 1)
-    question_word = question[ramdom_index]
-    clear_screen()
     for i in range(times):
+        question = WT.multich(choiceamount)
+        ramdom_index = randint(0, choiceamount - 1)
+        question_word = question[ramdom_index]
+        clear_screen()
         print("=" * 10)
         print(
             f"choose the correct word for the translation {question_word[translation]}"

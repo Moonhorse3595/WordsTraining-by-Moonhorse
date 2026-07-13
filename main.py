@@ -25,7 +25,9 @@ if __name__ == "__main__":
             print("WE - Word Editor")
             print("WT - Word Trainer")
             print("quit or exit - Exit the program")
+            input("Press Enter to continue...")
         elif mode == "quit" or mode == "exit":
             break
         else:
             print("Invalid mode. Please enter 'WE' or 'WT'.")
+            input("Press Enter to continue...")
