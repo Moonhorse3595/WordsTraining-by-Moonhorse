@@ -1,7 +1,7 @@
 [project]
 name = "wordstraining-by-moonhorse"
 version = "0.1.0"
-description = "Add your description here"
+description = "You can train the words like English words or Esperanto words here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []
