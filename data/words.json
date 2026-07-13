@@ -1,47 +1,32 @@
 [
     {
-        "word": "run",
-        "translation": "跑步",
-        "description": "(v.) when you are running, you move your legs fast to go somewhere."
+        "word": "telefono",
+        "translation": "電話",
+        "description": "(名詞) 一種用來跟遠方的人通話的裝置。"
     },
     {
-        "word": "sleep",
-        "translation": "睡觉",
-        "description": "(v.) when you sleep, you close your eyes and rest your body."
+        "word": "radio",
+        "translation": "收音機",
+        "description": "(名詞) 一種接收聲音廣播的裝置,也指廣播本身。"
     },
     {
-        "word": "eat",
-        "translation": "吃",
-        "description": "(v.) when you eat, you put food in your mouth and swallow it."
+        "word": "kaj",
+        "translation": "和；與",
+        "description": "(連接詞) 用來連接兩個詞、片語或概念。"
     },
     {
-        "word": "drink",
-        "translation": "喝",
-        "description": "(v.) when you drink, you take a liquid into your mouth and swallow it."
+        "word": "amiko",
+        "translation": "朋友",
+        "description": "(名詞) 你喜歡、也喜歡你、常常一起相處的人。"
     },
     {
-        "word": "jump",
-        "translation": "跳跃",
-        "description": "(v.) when you jump, you push yourself off the ground and into the air."
+        "word": "estas",
+        "translation": "是",
+        "description": "(動詞) 「是」的現在式,不論人稱和數都用同一個形式。"
     },
     {
-        "word": "read",
-        "translation": "阅读",
-        "description": "(v.) when you read, you look at words and understand their meaning."
-    },
-    {
-        "word": "write",
-        "translation": "写作",
-        "description": "(v.) when you write, you use a pen or pencil to put words on paper."
-    },
-    {
-        "word": "listen",
-        "translation": "听",
-        "description": "(v.) when you listen, you pay attention to sounds or music."
-    },
-    {
-        "word": "speak",
-        "translation": "说话",
-        "description": "(v.) when you speak, you use your voice to say words."
+        "word": "ankaŭ",
+        "translation": "也",
+        "description": "(副詞) 用來表示「另外還有」、「同樣地」的意思。"
     }
 ]
