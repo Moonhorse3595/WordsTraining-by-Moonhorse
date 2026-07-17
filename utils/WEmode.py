@@ -1,7 +1,8 @@
 import os
 
 from core import clear_screen
-
+from core.wordEditing import load_files
+from core.wordEditing import WordEditor
 
 def keepInput(msg):
     while True:
@@ -21,8 +22,9 @@ def WEmode(WE):
         print("3. Add Word")
         print("4. Save File")
         print("5. Show All Words")
-        print("6. Help")
-        print("7. Exit")
+        print("6. Load Other File")
+        print("7. Help")
+        print("8. Exit")
         choice = input("Enter your choice: ")
         if choice == "1":
             old_word = keepInput("Enter the word to edit: ")
@@ -81,16 +83,20 @@ def WEmode(WE):
                 print(f"An error occurred: {e}")
                 input("Press Enter to continue...")
         elif choice == "6":
+            files = load_files()
+            WE.load_files(*files)
+        elif choice == "7":
             print("Help: ")
             print("1. Edit Word: Edit an existing word in the list.")
             print("2. Delete Word: Delete a word from the list.")
             print("3. Add Word: Add a new word to the list.")
             print("4. Save File: Save the current list of words to a file.")
             print("5. Show All Words: Display all words in the list.")
-            print("6. Help: Show this help message.")
-            print("7. Exit: Exit the Word Editor Mode.")
+            print("6. Load Other File: Load another JSON file.")
+            print("7. Help: Show this help message.")
+            print("8. Exit: Exit the Word Editor Mode.")
             input("Press Enter to continue...")
-        elif choice == "7":
+        elif choice == "8":
             break
         else:
             print("Invalid choice. Please try again.")

@@ -1,29 +1,13 @@
-import os
-# from glob import glob
-
 from core import *
-
-# files = glob("data/*.json")
-def load_files():
-    files=[]
-    while True:
-        file_path = input("Enter the path to a JSON file (or type 'done' to finish): ")
-        if file_path.lower() == 'done':
-            break
-        elif os.path.isfile(file_path) and file_path.endswith('.json'):
-            files.append(file_path)
-        else:
-            print("Invalid file path. Please enter a valid JSON file path.")
-    return files
 import utils
 
 word = "word"
 translation = "translation"
 description = "description"
 
-files = load_files()
+files = wordEditing.load_files()
 WE = wordEditing.WordEditor(*files)
-if __name__ == "__main__":
+def main():
     while True:
         clear_screen()
         mode = input("Enter mode (WE for Word Editor, WT for Word Trainer):")
@@ -43,3 +27,5 @@ if __name__ == "__main__":
         else:
             print("Invalid mode. Please enter 'WE' or 'WT'.")
             input("Press Enter to continue...")
+if __name__ == "__main__":
+    main()

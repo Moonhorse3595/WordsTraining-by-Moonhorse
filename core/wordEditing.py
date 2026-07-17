@@ -1,5 +1,17 @@
 import json
+import os
 
+def load_files():
+    files=[]
+    while True:
+        file_path = input("Enter the path to a JSON file (or type 'done' to finish): ")
+        if file_path.lower() == 'done':
+            break
+        elif os.path.isfile(file_path) and file_path.endswith('.json'):
+            files.append(file_path)
+        else:
+            print("Invalid file path. Please enter a valid JSON file path.")
+    return files
 
 class WordEditor():
     def __init__(self, *files):
@@ -28,3 +40,11 @@ class WordEditor():
     def save_file(self, file):
         with open(file, "w", encoding="utf-8") as f:
             json.dump(self.content, f, ensure_ascii=False, indent=4)
+    def load_files(self, *files):
+        for file in files:
+            try:
+                with open(file, "r", encoding="utf-8") as f:
+                    new_content = json.load(f)
+                    self.content.extend(new_content)
+            except FileNotFoundError:
+                print(f"File {file} not found.")
