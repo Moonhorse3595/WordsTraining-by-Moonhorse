@@ -74,8 +74,12 @@ def WEmode(WE):
             filePath = os.path.join(folder, fileName)
             WE.save_file(filePath)
         elif choice == "5":
-            WE.show_all_words()
-            input("Press Enter to continue...")
+            try:
+                WE.show_all_words()
+                input("Press Enter to continue...")
+            except Exception as e:
+                print(f"An error occurred: {e}")
+                input("Press Enter to continue...")
         elif choice == "6":
             print("Help: ")
             print("1. Edit Word: Edit an existing word in the list.")
