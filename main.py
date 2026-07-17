@@ -1,15 +1,27 @@
 import os
-from glob import glob
+# from glob import glob
 
 from core import *
 
-files = glob("data/*.json")
+# files = glob("data/*.json")
+def load_files():
+    files=[]
+    while True:
+        file_path = input("Enter the path to a JSON file (or type 'done' to finish): ")
+        if file_path.lower() == 'done':
+            break
+        elif os.path.isfile(file_path) and file_path.endswith('.json'):
+            files.append(file_path)
+        else:
+            print("Invalid file path. Please enter a valid JSON file path.")
+    return files
 import utils
 
 word = "word"
 translation = "translation"
 description = "description"
 
+files = load_files()
 WE = wordEditing.WordEditor(*files)
 if __name__ == "__main__":
     while True:
