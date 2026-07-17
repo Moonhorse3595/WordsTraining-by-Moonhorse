@@ -6,3 +6,4 @@ pyproject.toml~
 main.spec
 build/
 dist/
+.python-version
